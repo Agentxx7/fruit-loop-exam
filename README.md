@@ -16,6 +16,12 @@ Om datorn använder kommandot `python3` i stället:
 python3 -m src.game
 ```
 
+## Kontroller
+
+- `W`, `A`, `S`, `D` flyttar spelaren.
+- `I` visar inventory.
+- `Q` eller `X` avslutar spelet.
+
 ## Vad jag har gjort
 
 |Version 1|Status|
@@ -31,10 +37,10 @@ python3 -m src.game
 
 |Version 2|Status|
 |---------|------|
-|I        |      |
-|J        |      |
-|K        |      |
-|L        |      |
+|I        | Klar - traps |
+|J        | Klar - shovel |
+|K        | Klar - keys and chests |
+|L        | Klar - exit |
 |M        |      |
 |N        |      |
 

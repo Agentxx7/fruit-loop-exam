@@ -83,3 +83,7 @@ class Grid:
     def is_player_position(self, x, y):
         """Returnerar True om positionen är spelarens startposition."""
         return x == self.player.pos_x and y == self.player.pos_y
+
+    def is_border_position(self, x, y):
+        """Returnerar True om positionen är på ytterväggen."""
+        return x == 0 or y == 0 or x == self.width - 1 or y == self.height - 1
