@@ -11,6 +11,7 @@ class GameState:
         self.score = 0
         self.inventory = []
         self.remaining_collectibles = pickups.count_required_collectibles()
+        self.successful_moves = 0
         self.is_running = True
 
         self.g = Grid()
@@ -62,14 +63,23 @@ def move_player(state, dx, dy):
     state.player.move(dx, dy)
     state.score -= 1
     handle_tile(state)
+    count_successful_move(state)
 
 
 def collect_item(state, item):
     state.score += item.value
     state.inventory.append(item.name)
-    state.remaining_collectibles -= 1
+    if item.required:
+        state.remaining_collectibles -= 1
     print(f"You found a {item.name}, +{item.value} points.")
     state.g.clear(state.player.pos_x, state.player.pos_y)
+
+
+def count_successful_move(state):
+    state.successful_moves += 1
+    if state.is_running and state.successful_moves % 25 == 0:
+        if pickups.spawn_fruit(state.g):
+            print("A new fruit grows from the fertile soil.")
 
 
 def handle_tile(state):
