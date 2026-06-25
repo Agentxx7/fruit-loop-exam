@@ -2,6 +2,9 @@
 
 Individuell examinationsuppgift i kursen Programmering med Python.
 
+Fruit Loop är ett terminalspel där spelaren samlar frukt, undviker fällor,
+hittar nycklar och försöker lämna banan genom utgången.
+
 ## Starta projektet
 
 För att starta mitt projekt skriver man följande i terminalen, medan man står i projektets rotmapp.
