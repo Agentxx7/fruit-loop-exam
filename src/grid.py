@@ -44,7 +44,7 @@ class Grid:
 
 
     def make_walls(self):
-        """Skapa väggar runt hela spelplanen"""
+        """Skapa väggar runt spelplanen och några väggar inuti."""
         for i in range(self.height):
             self.set(0, i, self.wall)
             self.set(self.width - 1, i, self.wall)
@@ -52,6 +52,18 @@ class Grid:
         for j in range(1, self.width - 1):
             self.set(j, 0, self.wall)
             self.set(j, self.height - 1, self.wall)
+
+        for x in range(6, 15):
+            self.set(x, 3, self.wall)
+
+        for y in range(3, 8):
+            self.set(14, y, self.wall)
+
+        for x in range(14, 25):
+            self.set(x, 7, self.wall)
+
+        for y in range(5, 10):
+            self.set(24, y, self.wall)
 
 
     # Används i filen pickups.py
@@ -68,3 +80,6 @@ class Grid:
         """Returnerar True om det inte finns något på aktuell ruta"""
         return self.get(x, y) == self.empty
 
+    def is_player_position(self, x, y):
+        """Returnerar True om positionen är spelarens startposition."""
+        return x == self.player.pos_x and y == self.player.pos_y

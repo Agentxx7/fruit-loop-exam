@@ -13,8 +13,8 @@ class Player:
         self.pos_x += dx
         self.pos_y += dy
 
-    def can_move(self, x, y, grid):
-        return True
-        #TODO: returnera True om det inte står något i vägen
-
+    def can_move(self, dx, dy, grid):
+        target_x = self.pos_x + dx
+        target_y = self.pos_y + dy
+        return grid.get(target_x, target_y) != grid.wall
 
