@@ -69,4 +69,4 @@ Det finns också enkla tester för några viktiga delar av spelet.
 |P        |      |
 |Q        |      |
 |R        |      |
-|S        |      |
+|S        | Klar |
